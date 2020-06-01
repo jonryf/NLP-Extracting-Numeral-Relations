@@ -37,8 +37,8 @@ def run():
 
     runner = ModelRunner(encoder, decoder, classifier, train_dataset, val_dataset, test_dataset)
 
-    runner.load_from_file()  # uncomment if you want to train from scratch
-    # runner.train()
+    runner.load_from_file()  # comment if you want to train from scratch
+    # runner.train() # uncomment if you want to train from scratch
     runner.test()
 
 
