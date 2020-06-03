@@ -41,3 +41,9 @@ The classifier is a neural network layer, which takes as input the last output v
 | F1-micro      | F1-macro      | Accuracy|
 | ------------- |:-------------:| -----:|
 | 89.15%      | 78.58% | 89.15% |
+
+
+v2 (fixed an bug with the implementation of the word embedding)
+| F1-micro      | F1-macro      | Accuracy|
+| ------------- |:-------------:| -----:|
+| 90.54%      | 83.00% | 90.54% |

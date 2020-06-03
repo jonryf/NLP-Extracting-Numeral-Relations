@@ -44,7 +44,7 @@ class TweetEncoder(nn.Module):
     Implementation of this module partly based on https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html
     """
 
-    def __init__(self, hidden_size, output_size, dropout_p=0.1, max_length=MAX_LENGTH):
+    def __init__(self, embedding, hidden_size, output_size, dropout_p=0.1, max_length=MAX_LENGTH):
         """
 
         :param hidden_size: hidden GRU size
@@ -57,8 +57,8 @@ class TweetEncoder(nn.Module):
         self.output_size = output_size
         self.dropout_p = dropout_p
         self.max_length = max_length
+        self.embedding = embedding
 
-        self.embedding = nn.Embedding(self.output_size, self.hidden_size)
         self.attn = nn.Linear(self.hidden_size * 2, self.max_length)
         self.attn_combine = nn.Linear(self.hidden_size * 2, self.hidden_size)
         self.dropout = nn.Dropout(self.dropout_p)

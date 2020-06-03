@@ -32,7 +32,7 @@ def run():
     computing_device = get_device()
 
     encoder = RelationEncoder(vocabulary_size, EMBEDDING_DIM).to(computing_device)
-    decoder = TweetEncoder(EMBEDDING_DIM, vocabulary_size).to(computing_device)
+    decoder = TweetEncoder(encoder.embedding, EMBEDDING_DIM, vocabulary_size).to(computing_device)
     classifier = Classifier().to(computing_device)
 
     runner = ModelRunner(encoder, decoder, classifier, train_dataset, val_dataset, test_dataset)
